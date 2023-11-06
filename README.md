@@ -10,3 +10,6 @@ Proyecto con sistema de emergencias para ciudadanos argentinos
 -Ubicacion, fecha y hora del pedido de auxilio
 -Marcar contactos con prioridad
 
+
+Autor del pry Leandro Moren
+
