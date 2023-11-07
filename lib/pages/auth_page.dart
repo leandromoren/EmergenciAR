@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:vidar_app/pages/home_page.dart';
 import 'package:vidar_app/pages/login_or_register_page.dart';
-import 'package:vidar_app/pages/login_page.dart';
+
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -19,7 +19,7 @@ class AuthPage extends StatelessWidget {
           }
           //User no logeado 
           else {
-            return LoginOrRegisterPage();
+            return const LoginOrRegisterPage();
           }
         },
       ),
