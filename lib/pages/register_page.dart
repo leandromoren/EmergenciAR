@@ -7,21 +7,23 @@ import 'package:vidar_app/components/my_textfield_login.dart';
 import 'package:vidar_app/components/square_tile.dart';
 import 'package:vidar_app/services/auth_service.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
 
   final Function()? onTap;
 
-  const LoginPage({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   //text editing controllers
   final emailController = TextEditingController();
   
   final passwordController = TextEditingController();
+
+  final confirmPasswordController = TextEditingController();
 
   //metodo de usuario logeado
   void usuarioIniciado() async {
@@ -34,11 +36,17 @@ class _LoginPageState extends State<LoginPage> {
           );
         });
 
+    //Try crear usuario
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      //Verificar que las contraseñas coincidan
+      if(passwordController.text == confirmPasswordController.text){
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text,
           password: passwordController.text
         );
+      } else {
+        mensajeDeError('Las contraseñas no coinciden.');
+      }
 
       //pop circulo de carga
       // ignore: use_build_context_synchronously
@@ -49,57 +57,31 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pop(context);
       //Mail o contraseña incorrectas
       if (e.code == 'user-not-found' || e.code == 'wrong-password' || e.code == 'INVALID_LOGIN_CREDENTIALS') {
-        credencialesInvalidas();
+        mensajeDeError('Mail o contraseña incorrecta. Por favor, intenta de nuevo.');
       }
       else if (e.code == 'ERROR_MISSING_EMAIL'){
-        campoEmailVacio();
+        mensajeDeError('Por favor, introduce un correo electronico.');
       }
     }
   }
 
-  //funcion de formato de mail incorrecto usando regex
-  void campoEmailVacio() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const AlertDialog(
-              backgroundColor: Colors.deepPurple,
-              title: Center(
-                  child: Text(
-                'Por favor, introduce un correo electronico.',
-              )));
-        });
-  }
-
   //Mensade de mail incorrecto en popup
-  void credencialesInvalidas() {
+  void mensajeDeError(String mensaje) {
     showDialog(
         context: context,
         builder: (context) {
-          return const AlertDialog(
-            backgroundColor: Color.fromARGB(255, 207, 207, 207),
+          return AlertDialog(
+            backgroundColor: const Color.fromARGB(255, 207, 207, 207),
             title: Center(
               child: Text(
-                'Mail o contraseña incorrecta. Por favor, intenta de nuevo.',
-                style: TextStyle(color: Colors.black),
+                mensaje,
+                style: const TextStyle(color: Colors.black),
               ),
             ),
           );
         });
   }
 
-  void formatoMailInvalido() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const AlertDialog(
-              backgroundColor: Colors.deepPurple,
-              title: Center(
-                  child: Text(
-                'Por favor, introduce un formato de correo válido.',
-              )));
-        });
-  }
 
 //============================================WIDGET PRINCIPAL=======================================================================
   @override
@@ -126,13 +108,13 @@ class _LoginPageState extends State<LoginPage> {
                       child: Align(
                         alignment: Alignment.center,
                         child: SizedBox(
-                          width: 400,
-                          height: 300,
+                          width: 240,
+                          height: 225,
                           child: SvgPicture.asset(
                             'assets/images/VIDAR.svg',
                             semanticsLabel: 'mi logo',
-                            height: 500,
-                            width: 500,
+                            height: 240,
+                            width: 240,
                             fit: BoxFit.cover,
                             alignment: Alignment.center,
                             // ignore: deprecated_member_use
@@ -146,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Te protegemos con ',
+                          text: 'Crea tu cuenta en ',
                           style:
                               TextStyle(fontSize: 16, color: Colors.grey[700]),
                         ),
@@ -176,6 +158,16 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: 'Contraseña',
                     obscureText: 'true',
                   ),
+
+                  const SizedBox(height: 10),
+
+                  //CONFIRM PASSWORD TEXT FIELD
+                  MyTextFieldLogin(
+                    controller: confirmPasswordController,
+                    hintText: 'Confirmar contraseña',
+                    obscureText: 'true',
+                  ),
+
                   const SizedBox(height: 10),
 
                   //Olvido su contraseña?
@@ -193,10 +185,9 @@ class _LoginPageState extends State<LoginPage> {
 
                   //Iniciar Sesion boton
                   MyButtonLogin(
-                    text: 'Iniciar sesion',
+                    text: 'Registrarse',
                     onTap: usuarioIniciado,
                   ),
-
                   const SizedBox(height: 25),
 
                   //O continuar boton
@@ -246,17 +237,17 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 50),
 
                   //No tienes una cuenta? registrate ahora
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('No tienes una cuenta?'),
+                      const Text('Ya tienes una cuenta?'),
                       const SizedBox(width: 4),
                       GestureDetector(
                         onTap: widget.onTap,
-                        child: const Text('Registrarse ahora',
+                        child: const Text('Inicia sesion ahora',
                             style: TextStyle(
                                 color: Colors.blue, fontWeight: FontWeight.bold)),
                       )
