@@ -48,31 +48,27 @@ class _LoginPageState extends State<LoginPage> {
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
       //Mail o contraseña incorrectas
-      if (e.code == 'user-not-found' || e.code == 'wrong-password' || e.code == 'INVALID_LOGIN_CREDENTIALS') {
-        credencialesInvalidas();
+      if (e.code == 'user-not-found' || e.code == 'ERROR_WEAK_PASSWORD' || e.code == 'INVALID_LOGIN_CREDENTIALS') {
+        mensajeErrorCampos('Mail o contraseña incorrecta. Por favor, intenta de nuevo. ${e.code}');
+        print(e.code);
       }
-      else if (e.code == 'ERROR_MISSING_EMAIL'){
-        campoEmailVacio();
+      else if (e.code == 'ERROR_MISSING_EMAIL' || e.code == 'channel-error'){
+        mensajeErrorCampos('Por favor, introduce tu mail. ${e.code}');
+        print(e.code);
+      }
+      else if(e.code == 'ERROR_INVALID_EMAIL'){
+        mensajeErrorCampos('Mail invalido. $e');
+        print(e.code);
+      }
+      else if(e.code == 'ERROR_EMAIL_ALREADY_IN_USE'){
+        mensajeErrorCampos('El mail ya esta en uso. $e');
+        print(e.code);
       }
     }
   }
 
-  //funcion de formato de mail incorrecto usando regex
-  void campoEmailVacio() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const AlertDialog(
-              backgroundColor: Colors.deepPurple,
-              title: Center(
-                  child: Text(
-                'Por favor, introduce un correo electronico.',
-              )));
-        });
-  }
-
   //Mensade de mail incorrecto en popup
-  void credencialesInvalidas() {
+  void mensajeErrorCampos(String mensaje) {
     showDialog(
         context: context,
         builder: (context) {
@@ -85,19 +81,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           );
-        });
-  }
-
-  void formatoMailInvalido() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const AlertDialog(
-              backgroundColor: Colors.deepPurple,
-              title: Center(
-                  child: Text(
-                'Por favor, introduce un formato de correo válido.',
-              )));
         });
   }
 
