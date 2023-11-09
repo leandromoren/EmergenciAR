@@ -52,18 +52,6 @@ class _LoginPageState extends State<LoginPage> {
         mensajeErrorCampos('Mail o contraseña incorrecta. Por favor, intenta de nuevo. ${e.code}');
         print(e.code);
       }
-      else if (e.code == 'ERROR_MISSING_EMAIL' || e.code == 'channel-error'){
-        mensajeErrorCampos('Por favor, introduce tu mail. ${e.code}');
-        print(e.code);
-      }
-      else if(e.code == 'ERROR_INVALID_EMAIL'){
-        mensajeErrorCampos('Mail invalido. $e');
-        print(e.code);
-      }
-      else if(e.code == 'ERROR_EMAIL_ALREADY_IN_USE'){
-        mensajeErrorCampos('El mail ya esta en uso. $e');
-        print(e.code);
-      }
     }
   }
 

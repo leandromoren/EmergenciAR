@@ -59,9 +59,6 @@ class _RegisterPageState extends State<RegisterPage> {
       if (e.code == 'user-not-found' || e.code == 'wrong-password' || e.code == 'INVALID_LOGIN_CREDENTIALS') {
         mensajeDeError('Mail o contraseña incorrecta. Por favor, intenta de nuevo.');
       }
-      else if (e.code == 'ERROR_MISSING_EMAIL'){
-        mensajeDeError('Por favor, introduce un correo electronico.');
-      }
     }
   }
 

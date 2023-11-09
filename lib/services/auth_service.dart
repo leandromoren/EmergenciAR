@@ -18,4 +18,8 @@ class AuthService {
     //Iniciar sesion con el usuario
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
+
+  signInWithFacebook() async {
+    
+  }
 }

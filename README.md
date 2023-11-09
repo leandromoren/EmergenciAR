@@ -12,4 +12,3 @@
 
 
 > Autor del pry Leandro Moren :man_office_worker:
-
