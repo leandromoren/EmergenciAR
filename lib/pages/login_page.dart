@@ -55,17 +55,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  //Mensade de mail incorrecto en popup
+  //Mensaje de mail incorrecto en popup
   void mensajeErrorCampos(String mensaje) {
     showDialog(
         context: context,
         builder: (context) {
-          return const AlertDialog(
-            backgroundColor: Color.fromARGB(255, 207, 207, 207),
+          return AlertDialog(
+            backgroundColor: const Color.fromARGB(255, 207, 207, 207),
             title: Center(
               child: Text(
-                'Mail o contraseña incorrecta. Por favor, intenta de nuevo.',
-                style: TextStyle(color: Colors.black),
+                mensaje,
+                style: const TextStyle(color: Colors.black),
               ),
             ),
           );

@@ -5,7 +5,7 @@ import 'package:vidar_app/components/side_menu.dart';
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  //Obtiene tu numbre de usuario
+  //Obtiene tu nombre de usuario
   final user = FirebaseAuth.instance.currentUser;
 
   //Metodo cerrar sesion
