@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                             fit: BoxFit.cover,
                             alignment: Alignment.center,
                             // ignore: deprecated_member_use
-                            color: Colors.red[700],
+                            color: const Color(0xFF17203A),
                           ),
                         ),
                       )),
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                           text: 'VIDAR',
                           style: TextStyle(
                               fontSize: 16,
-                              color: Colors.red[700],
+                              color: Colors.green[400],
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -212,7 +212,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       //Apple boton
                       SquareTile(
-                        imagePath: 'assets/images/apple.png',
+                        imagePath: 'assets/images/facebook.png',
                         onTap: () => {},
                       ),
                     ],

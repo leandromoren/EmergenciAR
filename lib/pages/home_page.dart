@@ -1,10 +1,17 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:vidar_app/components/side_menu.dart';
+import 'package:intl/intl.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   //Obtiene tu nombre de usuario
   final user = FirebaseAuth.instance.currentUser;
 
@@ -13,13 +20,69 @@ class HomePage extends StatelessWidget {
     await FirebaseAuth.instance.signOut();
   }
 
+  String traerFechaActual(){
+    var now = DateTime.now();
+    var formatterDate = DateFormat('dd/MM/yy');
+    String actualDate = formatterDate.format(now);
+    return actualDate;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SideMenu(); 
-    
-    
-    
-    
+    var now = DateTime.now();
+    var formatterDate = DateFormat.yMMMMd('en_US');
+    String actualDate = formatterDate.format(now);
+
+    return Scaffold(
+      backgroundColor: Colors.blue[800],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        '${user!.email}!',
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        actualDate,
+                        style: TextStyle(
+                            
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue[200]
+                            ),
+                      ),
+                    ],
+                  ),
+                  //NOTIFICACION
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue[600],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    child: IconButton(
+                      onPressed: cerrarSesion,
+                      icon: Icon(Icons.exit_to_app),
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+
     /*Scaffold(
       appBar: AppBar(
         actions: [
