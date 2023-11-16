@@ -22,7 +22,7 @@ class OnBoardingPage extends StatelessWidget {
                   Image(
                     width: THelperFunctions.screenWidth() * 0.8,
                     height: THelperFunctions.screenHeight() * 0.6,
-                    image: const AssetImage(TImages.lightAppLogo)
+                    image: const AssetImage(TImages.onboard1),
                   ),
                   Text(
                     TTexts.onBoardingTitle1,
@@ -31,8 +31,8 @@ class OnBoardingPage extends StatelessWidget {
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   Text(
-                    TTexts.onBoardingTitle1,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    TTexts.onBoardSubTitle1,
+                    style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
                 ],

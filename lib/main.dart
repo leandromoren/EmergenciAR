@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vidar_app/features/pages/onboarding_page.dart';
 
 void main() async {
@@ -16,9 +17,12 @@ class VivarApp extends StatefulWidget {
 class _VivarAppState extends State<VivarApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingPage(),
+      themeMode: ThemeMode.system,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      home: const OnBoardingPage(),
     );
   }
 }
