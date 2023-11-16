@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:vidar_app/utils/constants/image_strings.dart';
+import 'package:vidar_app/utils/constants/sizes.dart';
+import 'package:vidar_app/utils/constants/text_strings.dart';
 import 'package:vidar_app/utils/functions/helper_functions.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -21,7 +23,18 @@ class OnBoardingPage extends StatelessWidget {
                     width: THelperFunctions.screenWidth() * 0.8,
                     height: THelperFunctions.screenHeight() * 0.6,
                     image: const AssetImage(TImages.lightAppLogo)
-                  )
+                  ),
+                  Text(
+                    TTexts.onBoardingTitle1,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  Text(
+                    TTexts.onBoardingTitle1,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               )
             ]
