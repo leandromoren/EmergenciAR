@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vidar_app/features/pages/onboarding_page.dart';
+import 'package:vidar_app/features/pages/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
