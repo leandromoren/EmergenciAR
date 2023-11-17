@@ -6,6 +6,4 @@ class TImages {
 
   // ONBOARDING IMAGES
   static const String onboard1 = 'assets/images/onboard_images/vidar_animate.gif';
-  static const String onboard2 = 'assets/images/onboard_images/onboard1.gif';
-  static const String onboard3 = 'assets/images/onboard_images/onboard1.gif';
 }

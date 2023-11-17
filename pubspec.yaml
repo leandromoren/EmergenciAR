@@ -44,6 +44,7 @@ dependencies:
   url_launcher: ^6.2.1
   iconsax: ^0.0.8
   get_storage: ^2.1.1
+  typethis: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -71,8 +72,9 @@ flutter:
   assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-    - assets/images/onboard_images/
-    - assets/logos/
+    - assets/images/onboard_images/vidar_animate.gif
+    - assets/logos/logo_light_theme.png
+    - assets/logos/logo_dark_theme.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
