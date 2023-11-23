@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vidar_app/features/controllers.onboarding/onboarding_controller.dart';
 import 'package:vidar_app/utils/constants/sizes.dart';
 import 'package:vidar_app/utils/functions/device_utilitiy.dart';
 
@@ -13,7 +14,9 @@ class OnBoardingSaltar extends StatelessWidget {
       top: TDeviceUtils.getAppBarHeight(),
       right: TSizes.defaultSpace,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          OnBoardingController.instance.saltarPagina();
+        },
         child: const Text('Saltar')
       )
     );
