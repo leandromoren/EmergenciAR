@@ -2,18 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:vidar_app/features/controllers.onboarding/onboarding_controller.dart';
 import 'package:vidar_app/features/pages/widgets/onboarding_boton_siguiente.dart';
 import 'package:vidar_app/features/pages/widgets/onboarding_navegacion_puntos.dart';
 import 'package:vidar_app/features/pages/widgets/onboarding_page.dart';
 import 'package:vidar_app/features/pages/widgets/onboarding_saltar.dart';
 import 'package:vidar_app/utils/constants/image_strings.dart';
-import 'package:vidar_app/utils/constants/sizes.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
-import 'package:vidar_app/utils/functions/colors.dart';
-import 'package:vidar_app/utils/functions/device_utilitiy.dart';
-import 'package:vidar_app/utils/functions/helper_functions.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
