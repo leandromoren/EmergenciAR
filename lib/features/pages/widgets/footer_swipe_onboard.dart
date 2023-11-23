@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vidar_app/utils/constants/sizes.dart';
 import 'package:vidar_app/utils/functions/helper_functions.dart';
 
-class FooterBackground extends StatelessWidget {
-  const FooterBackground({
+class FooterSwipeOnboard extends StatelessWidget {
+  const FooterSwipeOnboard({
     super.key,
     required this.imagen
   });
