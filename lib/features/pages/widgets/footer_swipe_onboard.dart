@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vidar_app/utils/constants/sizes.dart';
-import 'package:vidar_app/utils/functions/helper_functions.dart';
 
 class FooterSwipeOnboard extends StatelessWidget {
   const FooterSwipeOnboard({
@@ -12,16 +11,16 @@ class FooterSwipeOnboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(TSizes.defaultSpace),
-      child: Column(
-        children: [
-          Image(
-            width: THelperFunctions.screenWidth() * 0.5,
-            height: THelperFunctions.screenHeight() * 0.3,
-            image: AssetImage(imagen),
-          ),
-        ],
+    return const Padding(
+      padding: EdgeInsets.all(TSizes.defaultSpace),
+      child: FadeTransition(
+        opacity: AlwaysStoppedAnimation(0.5),
+        child: Column(
+          children: [
+            SizedBox(height: 50,),
+            Icon(Icons.swipe_left_outlined,size: 50,)
+          ],
+        ),
       ),
       
     );
