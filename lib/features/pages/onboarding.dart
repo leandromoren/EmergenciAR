@@ -23,12 +23,12 @@ class OnBoardingPage extends StatelessWidget {
                 subtitulo: TTexts.onBoardSubTitle1
               ),
               OnBoardingWidgetPage(
-                imagen: TImages.onboard1,
+                imagen: TImages.onboard2,
                 titulo: TTexts.onBoardingTitle2,
                 subtitulo: TTexts.onBoardSubTitle2
               ),
               OnBoardingWidgetPage(
-                imagen: TImages.onboard1,
+                imagen: TImages.onboard3,
                 titulo: TTexts.onBoardingTitle3,
                 subtitulo: TTexts.onBoardSubTitle3
               ),
