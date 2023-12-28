@@ -10,20 +10,22 @@ class NavigationMenuBar extends StatelessWidget {
     final controller = Get.put(NavigationController());
 
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        height: 80,
-        elevation: 0,
-        selectedIndex: controller.selectedIndex.value,
-        onDestinationSelected: (index) => controller.selectedIndex.value = index,
-
-        destinations: const [
-          NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
-          NavigationDestination(icon: Icon(Iconsax.info_circle), label: 'Carta'),
-          NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
-          NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
-        ],
+      bottomNavigationBar: Obx(
+        () => NavigationBar(
+          height: 80,
+          elevation: 0,
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (index) =>
+              controller.selectedIndex.value = index,
+          destinations: const [
+            NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
+            NavigationDestination(icon: Icon(Iconsax.info_circle), label: 'Carta'),
+            NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
+            NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
+          ],
+        ),
       ),
-      body: Container(),
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }
