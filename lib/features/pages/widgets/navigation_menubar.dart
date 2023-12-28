@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NavigationMenuBar extends StatelessWidget {
@@ -6,15 +7,42 @@ class NavigationMenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(NavigationController());
+
     return Scaffold(
       bottomNavigationBar: NavigationBar(
+        height: 80,
+        elevation: 0,
+        selectedIndex: controller.selectedIndex.value,
+        onDestinationSelected: (index) => controller.selectedIndex.value = index,
+
         destinations: const [
-          NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-          NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
-          NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+          NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
+          NavigationDestination(icon: Icon(Iconsax.info_circle), label: 'Carta'),
+          NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
+          NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
         ],
       ),
+      body: Container(),
     );
   }
+}
+
+class NavigationController extends GetxController {
+  final Rx<int> selectedIndex = 0.obs;
+
+  final screens = [
+    Container(
+      color: Colors.green,
+    ),
+    Container(
+      color: Colors.purple
+    ),
+    Container(
+      color: Colors.orange,
+    ),
+    Container(
+      color: Colors.blue,
+    ),
+  ];
 }

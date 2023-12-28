@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vidar_app/features/pages/widgets/navigation_menubar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,9 +10,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: const Center(
-        child: Text('Home Page'),
-      ),
+      body: const Stack(
+        children: [
+          NavigationMenuBar()
+          ]
+        )
     );
   }
 }
