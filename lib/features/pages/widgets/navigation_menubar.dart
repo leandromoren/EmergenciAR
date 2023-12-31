@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vidar_app/features/pages/home_page.dart';
+import 'package:vidar_app/utils/functions/colors.dart';
+import 'package:vidar_app/utils/functions/helper_functions.dart';
 
 class NavigationMenuBar extends StatelessWidget {
   const NavigationMenuBar({super.key});
@@ -8,6 +11,7 @@ class NavigationMenuBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
+    final darkMode = THelperFunctions.isDarkMode(context);
 
     return Scaffold(
       bottomNavigationBar: Obx(
@@ -17,9 +21,11 @@ class NavigationMenuBar extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
+          backgroundColor: darkMode ? TColors.dark : Colors.white,
+          indicatorColor: darkMode ? TColors.light.withOpacity(0.1) : TColors.dark.withOpacity(0.1),
           destinations: const [
+            NavigationDestination(icon: Icon(Iconsax.home), label: 'Inicio'),
             NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
-            NavigationDestination(icon: Icon(Iconsax.info_circle), label: 'Carta'),
             NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
             NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
           ],
@@ -33,13 +39,13 @@ class NavigationMenuBar extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
+/* 
+  Cambiar el contenido de las screens por los widgets que sean necesarios por ejemplo
+  final screens = [const HomeScreen(), ...]
+*/
   final screens = [
-    Container(
-      color: Colors.green,
-    ),
-    Container(
-      color: Colors.purple
-    ),
+    const HomePage(),
+    const HomePage(),
     Container(
       color: Colors.orange,
     ),

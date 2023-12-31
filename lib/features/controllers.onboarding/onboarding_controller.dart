@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vidar_app/features/pages/home_page.dart';
+//import 'package:vidar_app/features/pages/home_page.dart';
+import 'package:vidar_app/features/pages/widgets/navigation_menubar.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -23,7 +24,7 @@ class OnBoardingController extends GetxController {
   //Actualizar indice y saltar a la siguiente pagina
   void siguientePagina() {
     if (currentPageIndex.value == 2) {
-      Get.to(const HomePage());
+      Get.to(const NavigationMenuBar());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

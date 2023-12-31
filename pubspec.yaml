@@ -45,6 +45,7 @@ dependencies:
   iconsax: ^0.0.8
   get_storage: ^2.1.1
   typethis: ^0.1.0
+  raised_buttons: ^0.0.2
 
 dev_dependencies:
   flutter_test:
