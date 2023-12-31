@@ -14,4 +14,5 @@ class TTexts {
   // -- Texto home page
   static const String tituloPrincipalHome = 'Necesitas pedir auxilio?';
   static const String tituloSecundarioHome = 'Solo presiona el boton';
+  static const String tituloAyudame = "Ayudame!";
 }
