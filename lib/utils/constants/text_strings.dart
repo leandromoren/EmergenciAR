@@ -15,4 +15,7 @@ class TTexts {
   static const String tituloPrincipalHome = 'Necesitas pedir auxilio?';
   static const String tituloSecundarioHome = 'Solo presiona el boton';
   static const String tituloAyudame = "Ayudame!";
+
+  // -- Mensajes de error
+  static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un error al ejecutar el llamado. Cierre la aplicacion y vuelva a intentarlo.';
 }

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vidar_app/utils/constants/text_strings.dart';
 
 class HelpButton extends StatelessWidget {
   const HelpButton({
@@ -19,14 +20,14 @@ class HelpButton extends StatelessWidget {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text("Lo sentimos, ha ocurrido un error al ejecutar el llamado"),
-            content: Text("Error: $error"),
+            title: const Text("Ha ocurrido un error"),
+            content: const Text(TTexts.errorLlamarPolicia),
             actions: [
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text("OK"),
+                child: const Text("Ok"),
               ),
             ],
           );
@@ -58,7 +59,7 @@ class HelpButton extends StatelessWidget {
         ),
         Center(
           child: GestureDetector(
-            onTap: () {
+            onLongPress: () {
               _llamarPolicia(context, '911');
             },
             child: Container(
@@ -72,7 +73,7 @@ class HelpButton extends StatelessWidget {
           ),
         ),
         GestureDetector(
-            onTap: () {
+            onLongPress: () {
               _llamarPolicia(context, '911');
             },
             child: const Icon(
