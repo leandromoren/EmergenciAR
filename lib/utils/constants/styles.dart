@@ -1,43 +1,43 @@
 import 'package:flutter/material.dart';
 
 const kAppBarText = TextStyle(
-  fontFamily: 'ProductSans',
+  fontFamily: 'Comic sans',
   fontSize: 16.0,
   fontWeight: FontWeight.w300,
   letterSpacing: 1.6,
 );
 
 const kText = TextStyle(
-  fontFamily: 'ProductSans',
+  fontFamily: 'Comic sans',
   fontSize: 14.0,
   fontWeight: FontWeight.w200,
   letterSpacing: 1.2,
 );
 
 const kHeadingText = TextStyle(
-  fontFamily: 'ProductSans',
-  fontSize: 11.0,
+  fontFamily: 'Comic sans',
+  fontSize: 13.0,
   fontWeight: FontWeight.w400,
-  letterSpacing: 1.8,
-  height: -5
+  letterSpacing: 0,
+  height: -4
 );
 
 const kSubHeadingText = TextStyle(
-  fontFamily: 'ProductSans',
-  fontSize: 18.0,
+  fontFamily: 'Comic sans',
+  fontSize: 13.0,
   fontWeight: FontWeight.w300,
   letterSpacing: 1.6,
 );
 
 const kBigText = TextStyle(
-  fontFamily: 'ProductSans',
-  fontSize: 30.0,
+  fontFamily: 'Comic sans',
+  fontSize: 22.0,
   fontWeight: FontWeight.w400,
-  letterSpacing: 2.4,
+  letterSpacing: 1.0,
 );
 
 const kHugeText = TextStyle(
-  fontFamily: 'ProductSans',
+  fontFamily: 'Comic sans',
   fontSize: 30.0,
   color: kBackgroundColor,
   fontWeight: FontWeight.w900,

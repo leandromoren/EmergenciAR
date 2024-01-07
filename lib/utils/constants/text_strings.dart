@@ -12,8 +12,8 @@ class TTexts {
   static const String onBoardSubTitle3 = 'Compartir tu ubicacion facilitara la busqueda de ayuda mas cercana.';
 
   // -- Texto home page
-  static const String tituloPrincipalHome = 'Necesitas pedir auxilio?';
-  static const String tituloSecundarioHome = 'Solo presiona el boton';
+  static const String tituloPrincipalHome = 'Llama a emergencias presionando el boton';
+  static const String tituloSecundarioHome = 'Mantente a salvo en todo momento';
   static const String tituloAyudame = "Ayudame!";
 
   // -- Mensajes de error

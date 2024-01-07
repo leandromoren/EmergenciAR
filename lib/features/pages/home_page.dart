@@ -35,6 +35,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
+              Container(
+                
+              ),
               Center(
                 child: Text(
                   TTexts.tituloPrincipalHome,
