@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 
@@ -48,7 +47,7 @@ class _HelpButtonState extends State<HelpButton> {
     super.dispose();
   }
 
-  Future<void> _llamarPolicia(BuildContext context, numeroEmergencia) async {
+  Future<void> _llamarPolicia(BuildContext context, String numeroEmergencia) async {
     try {
       //OBSERVAR SCHEME => TEL, TE => PROBANDO ERROR
       final Uri launchUri = Uri(scheme: 'tel', path: numeroEmergencia);
