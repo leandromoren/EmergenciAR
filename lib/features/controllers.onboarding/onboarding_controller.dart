@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-//import 'package:vidar_app/features/pages/home_page.dart';
 import 'package:vidar_app/features/pages/widgets/navigation_menubar.dart';
 
 class OnBoardingController extends GetxController {

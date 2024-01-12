@@ -1,8 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 
@@ -16,11 +16,17 @@ class HelpButton extends StatefulWidget {
   _HelpButtonState createState() => _HelpButtonState();
 }
 
-class _HelpButtonState extends State<HelpButton> {
-  final int valorInicial = 5;
-  int contador = 5;
+class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
+  final int valorInicial = 3;
+  int contador = 3;
+  late double progreso;
 
   Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   void _startTimer() {
     const oneSecond = Duration(seconds: 1);
@@ -47,7 +53,8 @@ class _HelpButtonState extends State<HelpButton> {
     super.dispose();
   }
 
-  Future<void> _llamarPolicia(BuildContext context, String numeroEmergencia) async {
+  Future<void> _llamarPolicia(
+      BuildContext context, String numeroEmergencia) async {
     try {
       //OBSERVAR SCHEME => TEL, TE => PROBANDO ERROR
       final Uri launchUri = Uri(scheme: 'tel', path: numeroEmergencia);
@@ -75,21 +82,33 @@ class _HelpButtonState extends State<HelpButton> {
 
   @override
   Widget build(BuildContext context) {
+    progreso = 1 - (contador / valorInicial);
     return Stack(
       alignment: Alignment.center,
       children: [
-        Container(
-          width: 210.0,
-          height: 210.0,
-          decoration: BoxDecoration(
-              color: const Color(0xFFF52800),
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.55),
-                    blurRadius: 8.0,
-                    offset: Offset.zero)
-              ]),
+        GestureDetector(
+          onLongPress: () {
+            _startTimer();
+          },
+          onLongPressUp: () {
+            _stopTimer();
+            setState(() {
+              contador = valorInicial;
+            });
+          },
+          child: Container(
+            width: 210.0,
+            height: 210.0,
+            decoration: BoxDecoration(
+                color: const Color(0xFFF52800),
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black.withOpacity(0.55),
+                      blurRadius: 8.0,
+                      offset: Offset.zero)
+                ]),
+          ),
         ),
         Center(
           child: GestureDetector(
@@ -103,25 +122,38 @@ class _HelpButtonState extends State<HelpButton> {
               });
             },
             child: Container(
-              width: 160.0,
-              height: 160.0,
-              decoration: const BoxDecoration(
-                color: Color(0xFFF52800),
-                shape: BoxShape.circle,
-              ),
-            ),
+                width: 20.0,
+                height: 220.0,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFF52800),
+                  shape: BoxShape.circle,
+                ),
+                alignment: Alignment.topCenter,
+                child: CircularPercentIndicator(
+                  radius: 110.0,
+                  lineWidth: 10.0,
+                  percent: progreso,
+                  backgroundColor: Colors.transparent,
+                  progressColor: Colors.white,
+                  circularStrokeCap: CircularStrokeCap.round,
+                  animation: true,
+                  //animationDuration: 1000,
+                )),
           ),
         ),
         GestureDetector(
           onLongPress: () {
-            _llamarPolicia(context, '911');
+            _startTimer();
+          },
+          onLongPressUp: () {
+            _stopTimer();
+            setState(() {
+              contador = valorInicial;
+            });
           },
           child: Text(
             contador.toString(),
-            style: const TextStyle(
-              fontSize: 50.0,
-              color: Colors.white
-            ),
+            style: const TextStyle(fontSize: 80.0, color: Colors.white),
           ),
         )
       ],

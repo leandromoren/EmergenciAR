@@ -17,5 +17,5 @@ class TTexts {
   //static const String tituloAyudame = "Ayudame!";
 
   // -- Mensajes de error
-  static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un error al ejecutar el llamado. Cierre la aplicacion y vuelva a intentarlo.';
+  static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentelo nuevamente';
 }
