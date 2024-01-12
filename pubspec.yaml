@@ -50,6 +50,7 @@ dependencies:
   legacy_buttons: ^0.0.1
   flutter_animated_progress: ^1.2.0
   percent_indicator: ^4.2.3
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

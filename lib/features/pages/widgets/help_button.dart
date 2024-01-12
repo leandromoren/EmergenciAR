@@ -16,10 +16,10 @@ class HelpButton extends StatefulWidget {
   _HelpButtonState createState() => _HelpButtonState();
 }
 
-class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
+class _HelpButtonState extends State<HelpButton> {
   final int valorInicial = 3;
   int contador = 3;
-  late double progreso;
+  double progreso = 0.0;
 
   Timer? _timer;
 
@@ -131,13 +131,12 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
                 alignment: Alignment.topCenter,
                 child: CircularPercentIndicator(
                   radius: 110.0,
-                  lineWidth: 10.0,
+                  lineWidth: 5.0,
                   percent: progreso,
                   backgroundColor: Colors.transparent,
                   progressColor: Colors.white,
-                  circularStrokeCap: CircularStrokeCap.round,
-                  animation: true,
-                  //animationDuration: 1000,
+                  circularStrokeCap: CircularStrokeCap.square,
+                  animation: false,
                 )),
           ),
         ),
