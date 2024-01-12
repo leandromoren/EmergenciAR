@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
@@ -16,10 +17,11 @@ class HelpButton extends StatefulWidget {
   _HelpButtonState createState() => _HelpButtonState();
 }
 
-class _HelpButtonState extends State<HelpButton> {
-  final int valorInicial = 3;
-  int contador = 3;
-  double progreso = 0.0;
+class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
+  final int valorInicial = 4;
+  int contador = 4;
+  late double progreso;
+  bool mostrarContador = true;
 
   Timer? _timer;
 
@@ -89,11 +91,13 @@ class _HelpButtonState extends State<HelpButton> {
         GestureDetector(
           onLongPress: () {
             _startTimer();
+            mostrarContador = false;
           },
           onLongPressUp: () {
             _stopTimer();
             setState(() {
               contador = valorInicial;
+              mostrarContador = true;
             });
           },
           child: Container(
@@ -114,11 +118,13 @@ class _HelpButtonState extends State<HelpButton> {
           child: GestureDetector(
             onLongPress: () {
               _startTimer();
+              mostrarContador = false;
             },
             onLongPressUp: () {
               _stopTimer();
               setState(() {
                 contador = valorInicial;
+                 mostrarContador = true;
               });
             },
             child: Container(
@@ -131,11 +137,11 @@ class _HelpButtonState extends State<HelpButton> {
                 alignment: Alignment.topCenter,
                 child: CircularPercentIndicator(
                   radius: 110.0,
-                  lineWidth: 5.0,
+                  lineWidth: 10.0,
                   percent: progreso,
                   backgroundColor: Colors.transparent,
                   progressColor: Colors.white,
-                  circularStrokeCap: CircularStrokeCap.square,
+                  circularStrokeCap: CircularStrokeCap.round,
                   animation: false,
                 )),
           ),
@@ -143,17 +149,24 @@ class _HelpButtonState extends State<HelpButton> {
         GestureDetector(
           onLongPress: () {
             _startTimer();
+            mostrarContador = false;
           },
           onLongPressUp: () {
             _stopTimer();
             setState(() {
               contador = valorInicial;
+              mostrarContador = true;
             });
           },
-          child: Text(
-            contador.toString(),
-            style: const TextStyle(fontSize: 80.0, color: Colors.white),
-          ),
+          child:
+            mostrarContador 
+            ? const Icon(Iconsax.radar_1, color: Colors.white, size: 120.0,)
+            : Text(
+                contador.toString(),
+                style: const TextStyle(fontSize: 80.0, color: Colors.white),
+              ) ,
+           // style: const TextStyle(fontSize: 80.0, color: Colors.white),
+          
         )
       ],
     );

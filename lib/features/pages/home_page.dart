@@ -35,9 +35,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Container(
-                
-              ),
+              //INSERTAR NUEVOS WIDGETS ACA
+              Text('HOLA PROBADNO POSICION'),
+              //===========================================
               Center(
                 child: Text(
                   TTexts.tituloPrincipalHome,
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               ),
               HelpButton(key: null),
             ],
-          ),
+          ),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         ),
       ),
     );
