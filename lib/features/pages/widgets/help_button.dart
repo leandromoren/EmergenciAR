@@ -17,7 +17,7 @@ class HelpButton extends StatefulWidget {
   _HelpButtonState createState() => _HelpButtonState();
 }
 
-class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
+class _HelpButtonState extends State<HelpButton> {
   final int valorInicial = 4;
   int contador = 4;
   late double progreso;
@@ -40,6 +40,9 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
         _llamarPolicia(context, '911');
         _stopTimer();
         contador = valorInicial;
+      }
+      if (contador == 4) {
+        mostrarContador = true;
       }
     });
   }
@@ -85,6 +88,7 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     progreso = 1 - (contador / valorInicial);
+
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -124,7 +128,7 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
               _stopTimer();
               setState(() {
                 contador = valorInicial;
-                 mostrarContador = true;
+                mostrarContador = true;
               });
             },
             child: Container(
@@ -137,11 +141,11 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
                 alignment: Alignment.topCenter,
                 child: CircularPercentIndicator(
                   radius: 110.0,
-                  lineWidth: 10.0,
+                  lineWidth: 5.0,
                   percent: progreso,
                   backgroundColor: Colors.transparent,
                   progressColor: Colors.white,
-                  circularStrokeCap: CircularStrokeCap.round,
+                  circularStrokeCap: CircularStrokeCap.square,
                   animation: false,
                 )),
           ),
@@ -158,16 +162,30 @@ class _HelpButtonState extends State<HelpButton> with TickerProviderStateMixin {
               mostrarContador = true;
             });
           },
-          child:
-            mostrarContador 
-            ? const Icon(Iconsax.radar_1, color: Colors.white, size: 120.0,)
-            : Text(
-                contador.toString(),
-                style: const TextStyle(fontSize: 80.0, color: Colors.white),
-              ) ,
-           // style: const TextStyle(fontSize: 80.0, color: Colors.white),
-          
-        )
+          child: mostrarContador
+              ? const Icon(
+                  Iconsax.radar_1,
+                  color: Colors.white,
+                  size: 120.0,
+                )
+              : Text(
+                  contador.toString(),
+                  style: const TextStyle(fontSize: 80.0, color: Colors.white),
+                ),
+        ),
+        Container(
+            alignment: Alignment.topCenter,
+            height: 100,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 85.0),
+                  if (!mostrarContador)
+                    const Text(
+                      'Suelta para cancelar',
+                      style: TextStyle(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                ]))
       ],
     );
   }
