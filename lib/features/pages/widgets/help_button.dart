@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vidar_app/utils/constants/styles.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 
 class HelpButton extends StatefulWidget {
@@ -69,7 +70,7 @@ class _HelpButtonState extends State<HelpButton> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text("Error al llamar emergencia."),
+            title: const Text(TTexts.tituloMensajeErrorAlLlamarEmergencia),
             content: const Text(TTexts.errorLlamarPolicia),
             actions: [
               ElevatedButton(
@@ -168,24 +169,32 @@ class _HelpButtonState extends State<HelpButton> {
                   color: Colors.white,
                   size: 120.0,
                 )
-              : Text(
-                  contador.toString(),
-                  style: const TextStyle(fontSize: 80.0, color: Colors.white),
+              : SizedBox(
+                  height: 160,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        contador.toString(),
+                        style: const TextStyle(
+                            fontSize: 80.0, color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ),
         ),
         Container(
             alignment: Alignment.topCenter,
             height: 100,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 85.0),
-                  if (!mostrarContador)
-                    const Text(
-                      'Suelta para cancelar',
-                      style: TextStyle(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                ]))
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const SizedBox(height: 35.0),
+              if (!mostrarContador)
+                const Text(
+                  TTexts.subTextSoltarParaCancelar,
+                  style: subTextCancelarLlamado
+                ),
+            ]))
       ],
     );
   }

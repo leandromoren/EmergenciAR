@@ -16,6 +16,10 @@ class TTexts {
   static const String tituloSecundarioHome = 'Mantente a salvo en todo momento';
   //static const String tituloAyudame = "Ayudame!";
 
+  //Texto Boton Rojo
+  static const String subTextSoltarParaCancelar = "Suelta para cancelar";
+
   // -- Mensajes de error
+  static const String tituloMensajeErrorAlLlamarEmergencia = "Error al llamar emergencia.";
   static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentelo nuevamente';
 }

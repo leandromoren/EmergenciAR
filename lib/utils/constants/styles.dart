@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+const subTextCancelarLlamado = TextStyle(
+  fontSize: 16.0,
+  color: Colors.white,
+  fontWeight: FontWeight.normal,
+  fontFamily: 'arial',
+  decorationStyle: TextDecorationStyle.solid,
+);
+
 const kAppBarText = TextStyle(
   fontFamily: 'Comic sans',
   fontSize: 16.0,
@@ -15,12 +23,11 @@ const kText = TextStyle(
 );
 
 const kHeadingText = TextStyle(
-  fontFamily: 'Comic sans',
-  fontSize: 13.0,
-  fontWeight: FontWeight.w400,
-  letterSpacing: 0,
-  height: -4
-);
+    fontFamily: 'Comic sans',
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: -4);
 
 const kSubHeadingText = TextStyle(
   fontFamily: 'Comic sans',
