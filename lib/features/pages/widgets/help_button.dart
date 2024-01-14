@@ -62,7 +62,6 @@ class _HelpButtonState extends State<HelpButton> {
   Future<void> _llamarPolicia(
       BuildContext context, String numeroEmergencia) async {
     try {
-      //OBSERVAR SCHEME => TEL, TE => PROBANDO ERROR
       final Uri launchUri = Uri(scheme: 'tel', path: numeroEmergencia);
       await launchUrl(launchUri);
     } catch (error) {
@@ -109,7 +108,7 @@ class _HelpButtonState extends State<HelpButton> {
             width: 210.0,
             height: 210.0,
             decoration: BoxDecoration(
-                color: const Color(0xFFF52800),
+                color: Colors.purple,
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -136,7 +135,7 @@ class _HelpButtonState extends State<HelpButton> {
                 width: 20.0,
                 height: 220.0,
                 decoration: const BoxDecoration(
-                  color: Color(0xFFF52800),
+                  color: Colors.purple,
                   shape: BoxShape.circle,
                 ),
                 alignment: Alignment.topCenter,

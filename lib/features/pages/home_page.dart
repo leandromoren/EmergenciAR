@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:vidar_app/features/pages/widgets/compartir_ubicacion.dart';
 import 'package:vidar_app/features/pages/widgets/help_button.dart';
 import 'package:vidar_app/utils/constants/styles.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
@@ -35,14 +36,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              //INSERTAR NUEVOS WIDGETS ACA
-              Text('HOLA PROBADNO POSICION'),
+              //INSERTAR NUEVOS WIDGETS ACA - COMPARTIR UBICACION
+              CompartirUbicacion(),
               //===========================================
               Center(
                 child: Text(
                   TTexts.tituloPrincipalHome,
                   textAlign: TextAlign.center,
-                  style: kBigText.copyWith(fontWeight: FontWeight.bold)
+                  style: textoPrincipalHomePage.copyWith(fontWeight: FontWeight.normal)
                 ),
               ),
       
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 child: Text(
                   TTexts.tituloSecundarioHome,
                   textAlign: TextAlign.center,
-                  style: kHeadingText
+                  style: textoSecundarioHomePage
                 ),
               ),
               HelpButton(key: null),

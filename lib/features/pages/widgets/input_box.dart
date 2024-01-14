@@ -36,7 +36,7 @@ class InputBox extends StatelessWidget {
         keyboardType: TextInputType.phone,
         textAlign: TextAlign.center,
         maxLength: 10,
-        style: kHugeText.copyWith(color: Colors.blueAccent, letterSpacing: 6.0),
+        style: noSirve.copyWith(color: Colors.blueAccent, letterSpacing: 6.0),
       ),
     );
   }

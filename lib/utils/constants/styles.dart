@@ -22,12 +22,12 @@ const kText = TextStyle(
   letterSpacing: 1.2,
 );
 
-const kHeadingText = TextStyle(
-    fontFamily: 'Comic sans',
+const textoSecundarioHomePage = TextStyle(
+    fontFamily: 'arial',
     fontSize: 13.0,
     fontWeight: FontWeight.w400,
-    letterSpacing: 0,
-    height: -4);
+    height: -2
+    );
 
 const kSubHeadingText = TextStyle(
   fontFamily: 'Comic sans',
@@ -36,14 +36,15 @@ const kSubHeadingText = TextStyle(
   letterSpacing: 1.6,
 );
 
-const kBigText = TextStyle(
+const textoPrincipalHomePage = TextStyle(
   fontFamily: 'Comic sans',
   fontSize: 22.0,
   fontWeight: FontWeight.w400,
-  letterSpacing: 1.0,
+  letterSpacing: 0.0,
+  
 );
 
-const kHugeText = TextStyle(
+const noSirve = TextStyle(
   fontFamily: 'Comic sans',
   fontSize: 30.0,
   color: kBackgroundColor,

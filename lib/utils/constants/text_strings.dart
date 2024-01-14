@@ -1,7 +1,4 @@
 class TTexts {
-
-  // -- Global texts
-
   // -- Oboarding texts
   static const String onBoardingTitle1 = 'Utiliza el boton para pedir auxilio';
   static const String onBoardingTitle2 = 'Contamos con un mapa de tu ciudad';
@@ -14,9 +11,8 @@ class TTexts {
   // -- Texto home page
   static const String tituloPrincipalHome = 'Manten presionado el boton para llamar a emergencias';
   static const String tituloSecundarioHome = 'Mantente a salvo en todo momento';
-  //static const String tituloAyudame = "Ayudame!";
 
-  //Texto Boton Rojo
+  // -- Texto Boton Rojo
   static const String subTextSoltarParaCancelar = "Suelta para cancelar";
 
   // -- Mensajes de error
