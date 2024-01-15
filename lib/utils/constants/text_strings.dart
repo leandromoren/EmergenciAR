@@ -1,5 +1,5 @@
 class TTexts {
-  // -- Oboarding texts
+  // -- Oboarding textos
   static const String onBoardingTitle1 = 'Utiliza el boton para pedir auxilio';
   static const String onBoardingTitle2 = 'Contamos con un mapa de tu ciudad';
   static const String onBoardingTitle3 = 'Ubicacion en tiempo real';
@@ -18,4 +18,8 @@ class TTexts {
   // -- Mensajes de error
   static const String tituloMensajeErrorAlLlamarEmergencia = "Error al llamar emergencia.";
   static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentelo nuevamente';
+  static const String ubicacionDispositivoDesactivada = 'La ubicación del dispositivo está desactivada.';
+
+  // -- Mensaje de ubicacion
+  static const String mensajeDeUbicacionCompartida = '🚨¡Esta es mi ubicación actual!📍:';
 }
