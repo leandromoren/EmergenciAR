@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 
@@ -25,9 +26,32 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
   // Precarga la ubicacion para optimizar la velocidad
   // Al desplegarse el panel de apps para compartir
   Future<void> _precargarUbicacion() async {
-    posicion = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
+    final status = await Permission.location.request();
+    if (status.isGranted) {
+      posicion = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+    } else {
+      // Manejo del caso en que el usuario deniega los permisos
+      // ignore: use_build_context_synchronously
+      await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Estas seguro?'),
+            content: const Text(TTexts.msjDenegarPermisosDeUbicacion),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text("Aceptar"),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   void compartirUbicacion() async {
@@ -62,7 +86,7 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
       alignment: Alignment.topLeft,
       child: GestureDetector(
         onTap: compartirUbicacion,
-        child:Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(
@@ -71,7 +95,7 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
               color: Colors.purple,
               iconSize: 40.0,
             ),
-             Text(
+            Text(
               'Compartir\nubicación',
               style: TextStyle(fontSize: 11.0, color: Colors.grey[400]),
             ),
