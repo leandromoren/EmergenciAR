@@ -67,7 +67,7 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
           children: [
             IconButton(
               onPressed: compartirUbicacion,
-              icon: const Icon(Icons.share),
+              icon: const Icon(Icons.share_location_outlined),
               color: Colors.purple,
               iconSize: 40.0,
             ),

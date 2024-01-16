@@ -22,12 +22,11 @@ const kText = TextStyle(
   letterSpacing: 1.2,
 );
 
-const textoSecundarioHomePage = TextStyle(
+TextStyle textoSecundarioHomePage = TextStyle(
     fontFamily: 'arial',
     fontSize: 13.0,
     fontWeight: FontWeight.w400,
-    height: -2
-    );
+    color: Colors.grey[400]);
 
 const kSubHeadingText = TextStyle(
   fontFamily: 'Comic sans',
@@ -36,12 +35,18 @@ const kSubHeadingText = TextStyle(
   letterSpacing: 1.6,
 );
 
-const textoPrincipalHomePage = TextStyle(
-  fontFamily: 'Comic sans',
-  fontSize: 22.0,
+const colorizeColors = [
+  Colors.purple,
+  Colors.blue,
+  Colors.yellow,
+  Colors.red,
+];
+
+const textoSugerencias = TextStyle(
+  fontFamily: 'Horizon',
+  fontSize: 18.0,
   fontWeight: FontWeight.w400,
   letterSpacing: 0.0,
-  
 );
 
 const noSirve = TextStyle(

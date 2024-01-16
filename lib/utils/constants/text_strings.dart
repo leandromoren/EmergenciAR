@@ -9,8 +9,7 @@ class TTexts {
   static const String onBoardSubTitle3 = 'Comparte tu ubicacion con tus amigos o familia';
 
   // -- Texto home page
-  static const String tituloPrincipalHome = 'Manten presionado el boton para llamar a emergencias';
-  static const String tituloSecundarioHome = 'Mantente a salvo en todo momento';
+  static const String tituloSecundarioHome = 'Manten presionado el boton para llamar a emergencias';
 
   // -- Texto Boton Rojo
   static const String subTextSoltarParaCancelar = "Suelta para cancelar";
@@ -19,6 +18,9 @@ class TTexts {
   static const String tituloMensajeErrorAlLlamarEmergencia = "Error al llamar emergencia.";
   static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentelo nuevamente';
   static const String ubicacionDispositivoDesactivada = 'La ubicación del dispositivo está desactivada.';
+
+  // -- Sugerencias
+  List<String> sugerencias = ['Busca un lugar seguro', 'Ve a lugares concurridos', 'Busca ayuda inmediatamente', 'Comunicate con tus familiares o amigos'];
 
   // -- Mensaje de ubicacion
   static const String mensajeDeUbicacionCompartida = '🚨¡Esta es mi ubicación actual!📍:';
