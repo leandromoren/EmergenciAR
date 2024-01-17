@@ -4,7 +4,7 @@ const subTextCancelarLlamado = TextStyle(
   fontSize: 16.0,
   color: Colors.white,
   fontWeight: FontWeight.normal,
-  fontFamily: 'arial',
+  fontFamily: 'Comic sans',
   decorationStyle: TextDecorationStyle.solid,
 );
 
@@ -23,10 +23,11 @@ const kText = TextStyle(
 );
 
 TextStyle textoSecundarioHomePage = TextStyle(
-    fontFamily: 'arial',
-    fontSize: 13.0,
-    fontWeight: FontWeight.w400,
-    color: Colors.grey[400]);
+  fontFamily: 'arial',
+  fontSize: 13.0,
+  fontWeight: FontWeight.w400,
+  color: Colors.grey[400]
+);
 
 const kSubHeadingText = TextStyle(
   fontFamily: 'Comic sans',
@@ -47,14 +48,6 @@ const textoSugerencias = TextStyle(
   fontSize: 18.0,
   fontWeight: FontWeight.w400,
   letterSpacing: 0.0,
-);
-
-const noSirve = TextStyle(
-  fontFamily: 'Comic sans',
-  fontSize: 30.0,
-  color: kBackgroundColor,
-  fontWeight: FontWeight.w900,
-  letterSpacing: 4.0,
 );
 
 const kBackgroundColor = Color(0xFFF5F0EA);

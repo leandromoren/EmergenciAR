@@ -16,8 +16,8 @@ class TTexts {
 
   // -- Mensajes de error
   static const String tituloMensajeErrorAlLlamarEmergencia = "Error al llamar emergencia.";
-  static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentelo nuevamente';
-  static const String ubicacionDispositivoDesactivada = 'La ubicación del dispositivo está desactivada.';
+  static const String errorLlamarPolicia = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentalo nuevamente';
+  static const String ubicacionDispositivoDesactivada = 'No es posible acceder a tu ubicacion actual.';
   static const String msjDenegarPermisosDeUbicacion = 'Si deniegas el permiso no podras compartir tu ubicacion.';
 
   // -- Sugerencias

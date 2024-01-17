@@ -29,6 +29,9 @@ class _HelpButtonState extends State<HelpButton> {
   @override
   void initState() {
     super.initState();
+    if (contador == 4 && valorInicial == 4) {
+        mostrarContador = true;
+      }
   }
 
   void _startTimer() {
@@ -42,7 +45,7 @@ class _HelpButtonState extends State<HelpButton> {
         _stopTimer();
         contador = valorInicial;
       }
-      if (contador == 4) {
+      if (contador == 4 && valorInicial == 4) {
         mostrarContador = true;
       }
     });
