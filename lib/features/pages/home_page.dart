@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage>
                   textDirection: TextDirection.ltr,
                 ),
               ),
-              HelpButton(key: null),
+              HelpButton(),
             ],
           ),
         ),

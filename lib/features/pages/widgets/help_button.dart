@@ -10,8 +10,8 @@ import 'package:vidar_app/utils/constants/text_strings.dart';
 
 class HelpButton extends StatefulWidget {
   const HelpButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   // ignore: library_private_types_in_public_api
