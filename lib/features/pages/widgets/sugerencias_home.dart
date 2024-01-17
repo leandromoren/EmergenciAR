@@ -43,7 +43,7 @@ class _SugerenciasState extends State<Sugerencias> {
   Widget build(BuildContext context) {
     return Center(
       child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(seconds: 1),
         transitionBuilder: (widget, animation) {
           return FadeTransition(
             opacity: animation,
@@ -60,10 +60,10 @@ class _SugerenciasState extends State<Sugerencias> {
           key: ValueKey<int>(_indice),
           animatedTexts: [
             ColorizeAnimatedText(
-              '⦿ ${widget.textos[_indice]}',
+              '🛡️ ${widget.textos[_indice]}',
               textStyle: textoSugerencias,
               textAlign: TextAlign.center,
-              speed: const Duration(milliseconds: 300),
+              speed: const Duration(milliseconds: 50),
               colors: colorizeColors,
             ),
           ],

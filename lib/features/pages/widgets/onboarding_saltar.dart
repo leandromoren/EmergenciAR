@@ -15,9 +15,9 @@ class OnBoardingSaltar extends StatelessWidget {
       right: TSizes.defaultSpace,
       child: TextButton(
         onPressed: () {
-          OnBoardingController.instance.saltarPagina();
+          OnBoardingController.instance.saltarOnboarding();
         },
-        child: const Text('Saltar')
+        child: const Text('Omitir')
       )
     );
   }

@@ -21,10 +21,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   List<String> sugerencias = [
-    'Prioriza tu seguridad en todo momento',
-    'Preferentemente, busca refugio en áreas concurridas',
-    'Solicita asistencia de manera inmediata',
-    'Establece comunicación con tus seres queridos o amigos de confianza'
+    'Mantén la atención en tu entorno: Estate atento/a a lo que sucede a tu alrededor y evita distraerte con dispositivos electrónicos.',
+    'Evita mostrar objetos de valor: No exhibas joyas costosas, dispositivos electrónicos caros u otros objetos valiosos en público.',
+    'Camina por áreas bien iluminadas: Elige rutas que estén bien iluminadas y transitadas por otras personas.',
+    'Utiliza servicios de transporte confiables: Al utilizar taxis o aplicaciones de transporte compartido, elige proveedores confiables y comparte los detalles del viaje con alguien de confianza',
+    'Confía en tu instinto: Si algo te parece sospechoso o inseguro, confía en tu instinto y busca un entorno más seguro.',
+    'Mantén tus pertenencias seguras: Mantén tus pertenencias cerca de ti y evita dejarlas desatendidas en lugares públicos.',
+    'Conoce las rutas de emergencia: Familiarízate con las rutas de emergencia y los lugares seguros en tu área.',
+    'Utiliza el transporte público seguro: Utiliza sistemas de transporte público reconocidos y mantente alerta en estaciones y paradas.',
+    'Informa a alguien sobre tus planes: Antes de salir, informa a alguien de confianza sobre tus planes y cuándo esperas regresar.',
+    'Mantén un teléfono móvil cargado y con saldo: Asegúrate de tener un teléfono móvil con suficiente carga y saldo para realizar llamadas en caso de emergencia.'
   ];
   int indiceSugerenciaActual = 0;
   late AnimationController _animationController;
@@ -77,7 +83,7 @@ class _HomePageState extends State<HomePage>
             children: <Widget>[
               CompartirUbicacion(),
               Container(
-                height: 60,
+                height: 120,
                 child: Sugerencias(
                     animacion: _animationController,
                     textos: sugerencias,

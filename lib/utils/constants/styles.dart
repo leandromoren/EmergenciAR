@@ -45,7 +45,7 @@ const colorizeColors = [
 
 const textoSugerencias = TextStyle(
   fontFamily: 'Horizon',
-  fontSize: 18.0,
+  fontSize: 15.0,
   fontWeight: FontWeight.w400,
   letterSpacing: 0.0,
 );

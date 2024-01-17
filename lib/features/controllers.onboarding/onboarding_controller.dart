@@ -30,9 +30,8 @@ class OnBoardingController extends GetxController {
     }
   }
 
-  //Actualizar indice y saltar a la ultima pagina
-  void saltarPagina() {
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+  //Enviar directo al Home
+  void saltarOnboarding() {
+    Get.to(const NavigationMenuBar());
   }
 }
