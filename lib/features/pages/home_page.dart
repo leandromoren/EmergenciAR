@@ -1,7 +1,4 @@
 // ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, sort_child_properties_last
-
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:vidar_app/features/pages/widgets/compartir_ubicacion.dart';
 import 'package:vidar_app/features/pages/widgets/help_button.dart';
