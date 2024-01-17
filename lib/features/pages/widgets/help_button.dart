@@ -22,16 +22,12 @@ class _HelpButtonState extends State<HelpButton> {
   final int valorInicial = 4;
   int contador = 4;
   late double progreso;
-  bool mostrarContador = true;
 
   Timer? _timer;
 
   @override
   void initState() {
     super.initState();
-    if (contador == 4 && valorInicial == 4) {
-        mostrarContador = true;
-      }
   }
 
   void _startTimer() {
@@ -39,15 +35,12 @@ class _HelpButtonState extends State<HelpButton> {
     _timer = Timer.periodic(oneSecond, (timer) {
       setState(() {
         contador--;
+        if (contador < 0) {
+          _llamarPolicia(context, '911');
+          _stopTimer();
+          contador = valorInicial;
+        }
       });
-      if (contador < 0) {
-        _llamarPolicia(context, '911');
-        _stopTimer();
-        contador = valorInicial;
-      }
-      if (contador == 4 && valorInicial == 4) {
-        mostrarContador = true;
-      }
     });
   }
 
@@ -98,13 +91,11 @@ class _HelpButtonState extends State<HelpButton> {
         GestureDetector(
           onLongPress: () {
             _startTimer();
-            mostrarContador = false;
           },
           onLongPressUp: () {
             _stopTimer();
             setState(() {
               contador = valorInicial;
-              mostrarContador = true;
             });
           },
           child: Container(
@@ -125,13 +116,11 @@ class _HelpButtonState extends State<HelpButton> {
           child: GestureDetector(
             onLongPress: () {
               _startTimer();
-              mostrarContador = false;
             },
             onLongPressUp: () {
               _stopTimer();
               setState(() {
                 contador = valorInicial;
-                mostrarContador = true;
               });
             },
             child: Container(
@@ -156,16 +145,18 @@ class _HelpButtonState extends State<HelpButton> {
         GestureDetector(
           onLongPress: () {
             _startTimer();
-            mostrarContador = false;
+            setState(() {
+              contador = valorInicial;
+            });
           },
           onLongPressUp: () {
             _stopTimer();
             setState(() {
               contador = valorInicial;
-              mostrarContador = true;
             });
           },
-          child: mostrarContador
+          // ignore: unrelated_type_equality_checks
+          child: contador == valorInicial
               ? const Icon(
                   Iconsax.radar_1,
                   color: Colors.white,
@@ -191,11 +182,9 @@ class _HelpButtonState extends State<HelpButton> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               const SizedBox(height: 35.0),
-              if (!mostrarContador)
-                const Text(
-                  TTexts.subTextSoltarParaCancelar,
-                  style: subTextCancelarLlamado
-                ),
+              if (contador != valorInicial)
+                const Text(TTexts.subTextSoltarParaCancelar,
+                    style: subTextCancelarLlamado),
             ]))
       ],
     );
