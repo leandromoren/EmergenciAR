@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class EmergenciasNumeros extends StatelessWidget {
-  const EmergenciasNumeros({Key? key}) : super(key: key);
+class EmergenciasTEL extends StatelessWidget {
+  const EmergenciasTEL({Key? key}) : super(key: key);
 
   Future<List<Map<String, String>>> cargarNumerosEmergencias() async {
-    final jsonString = await rootBundle.loadString('assets/jsons/numerosEmergencias.json');
+    final jsonString = await rootBundle.loadString('assets/jsons/numeros_mergencias.json');
     final parsedJson = jsonDecode(jsonString);
     final numerosEmergencias =
         (parsedJson as List<dynamic>).cast<Map<String, dynamic>>().map((item) {
@@ -43,11 +43,9 @@ class EmergenciasNumeros extends StatelessWidget {
             },
           );
         } else if (snapshot.hasError) {
-          // Muestra un indicador de carga mientras se carga el JSON
-          print(snapshot.error);
-          return const Center(
-            child: Text("Error al cargar datos"),
-          );
+            return const Center(
+              child: Text("Error al cargar datos"),
+            );
         } else {
           return const Center(child: CircularProgressIndicator());
         }

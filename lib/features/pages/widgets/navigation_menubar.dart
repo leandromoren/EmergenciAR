@@ -49,7 +49,7 @@ class NavigationController extends GetxController {
     Container(
       color: Colors.green,
     ),
-    const EmergenciasNumeros(),
+    const EmergenciasTEL(),
     Container(
       color: Colors.blue,
     ),

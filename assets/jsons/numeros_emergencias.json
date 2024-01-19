@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Policía",
+    "numero": 911
+  },
+  {
+    "nombre": "Bomberos",
+    "numero": 100
+  },
+  {
+    "nombre": "Ambulancia",
+    "numero": 107
+  },
+  {
+    "nombre": "Defensa civil",
+    "numero": 103
+  },
+  {
+    "nombre": "Emergencia ambiental",
+    "numero": 105
+  },
+  {
+    "nombre": "Emergencia náutica",
+    "numero": 106
+  },
+  {
+    "nombre": "Asistencia al suicida",
+    "numero": 135
+  },
+  {
+    "nombre": "Chicos y chicas extraviados",
+    "numero": 142
+  }
+]
