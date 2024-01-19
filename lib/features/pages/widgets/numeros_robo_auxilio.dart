@@ -13,7 +13,6 @@ class NumerosRoboAuxilio extends StatefulWidget {
 
 class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
   List<Item> numerosEmergencias = [];
-  final List<Item> _data = generateItems(8);
 
   @override
   void initState() {
