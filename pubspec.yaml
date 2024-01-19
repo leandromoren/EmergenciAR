@@ -80,8 +80,8 @@ flutter:
     - assets/images/onboard_images/
     - assets/logos/logo_light_theme.png
     - assets/logos/logo_dark_theme.png
-    - assets/jsons/numeros_emergencias.json
-    - assets/jsons/violencia_y_abuso.json
+    - assets/jsons/numeros_robo_auxilio.json
+    - assets/jsons/numeros_violencia_y_abuso.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

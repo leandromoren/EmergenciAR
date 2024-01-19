@@ -11,6 +11,9 @@ class TTexts {
   // -- Texto home page
   static const String tituloSecundarioHome = 'Manten presionado el boton para llamar a emergencias';
 
+  // -- Texto Emergencias page
+  static const String tituloPrincipalEmergencias = 'Emergencias';
+
   // -- Texto Boton Rojo
   static const String subTextSoltarParaCancelar = "Suelta para cancelar";
 
