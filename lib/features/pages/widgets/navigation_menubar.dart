@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vidar_app/features/pages/emergencias_numeros.dart';
 import 'package:vidar_app/features/pages/home_page.dart';
 import 'package:vidar_app/utils/functions/colors.dart';
 import 'package:vidar_app/utils/functions/helper_functions.dart';
@@ -48,9 +49,7 @@ class NavigationController extends GetxController {
     Container(
       color: Colors.green,
     ),
-    Container(
-      color: Colors.orange,
-    ),
+    const EmergenciasNumeros(),
     Container(
       color: Colors.blue,
     ),

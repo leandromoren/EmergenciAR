@@ -28,7 +28,7 @@ class _SugerenciasState extends State<Sugerencias> with SingleTickerProviderStat
     'Mantén un teléfono móvil cargado y con saldo: Asegúrate de tener un teléfono móvil con suficiente carga y saldo para realizar llamadas en caso de emergencia.'
   ];
  
-  late AnimationController animacion;
+  late AnimationController _animacion;
   late Timer _timer;
   int _indice = 0;
 
@@ -40,15 +40,15 @@ class _SugerenciasState extends State<Sugerencias> with SingleTickerProviderStat
         _indice = (_indice + 1) % sugerencias.length;
       });
     });
-    animacion = AnimationController(
+    _animacion = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     );
-    animacion.repeat(reverse: false);
-    cambiarSugerencias();
+    _animacion.repeat(reverse: false);
+    _cambiarSugerencias();
   }
 
-  void cambiarSugerencias() {
+  void _cambiarSugerencias() {
     Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         _indice =
@@ -59,7 +59,7 @@ class _SugerenciasState extends State<Sugerencias> with SingleTickerProviderStat
 
   @override
   void dispose() {
-    animacion.dispose();
+    _animacion.dispose();
     _timer.cancel();
     super.dispose();
   }

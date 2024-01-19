@@ -1,0 +1,14 @@
+[
+    {
+      "nombre": "Policía",
+      "numero": "101"
+    },
+    {
+      "nombre": "Bomberos",
+      "numero": "100"
+    },
+    {
+      "nombre": "Ambulancia",
+      "numero": "107"
+    }
+]

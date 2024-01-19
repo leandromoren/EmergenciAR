@@ -43,6 +43,9 @@ class _HomePageState extends State<HomePage>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               CompartirUbicacion(),
+              //Agregar otro widget
+              
+              //---------------------
               Container(
                 height: 120,
                 child: Sugerencias(),
