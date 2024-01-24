@@ -1,34 +1,42 @@
 [
   {
     "nombre": "Policía",
-    "numero": 911
+    "numero": 911,
+    "descripcion": "Central de Emergencias Nacional"
   },
   {
     "nombre": "Bomberos",
-    "numero": 100
+    "numero": 100,
+    "descripcion": "Los bomberos de Argentina están capacitados para apagar incendios en casas, complejos habitacionales, residenciales, locales comerciales y plantas industriales."
   },
   {
     "nombre": "Ambulancia",
-    "numero": 107
+    "numero": 107,
+    "descripcion": "Línea gratuita del servicio público de emergencias médicas. Averiguá también cuál es el número de emergencias médicas de tu localidad y tenelo siempre a mano."
   },
   {
     "nombre": "Defensa civil",
-    "numero": 103
+    "numero": 103,
+    "descripcion": "Defensa Civil de Argentina ayuda a los damnificados de terremotos, tsunamis, inundaciones, desprendimientos de tierra, derrame de sustancias químicas y otro tipo de desastres brindándoles medicina, vestimenta, refugios y asistencia médica."
   },
   {
     "nombre": "Emergencia ambiental",
-    "numero": 105
+    "numero": 105,
+    "descripcion": "Frente a una catástrofe resultado de factores naturales, tecnológicos o provocados por el hombre, podés recurrir al 105."
   },
   {
     "nombre": "Emergencia náutica",
-    "numero": 106
+    "numero": 106,
+    "descripcion": "Número para comunicarse con Prefectura Naval Argentina."
   },
   {
     "nombre": "Asistencia al suicida",
-    "numero": 135
+    "numero": 135,
+    "descripcion": "Si vos o alguien cercano a vos está atravesando una crisis emocional de cualquier tipo, siente que nada tiene sentido o se encuentra atrapado en una situación a la que no le encuentra salida, no dudes en llamar a este número."
   },
   {
     "nombre": "Chicos y chicas extraviados",
-    "numero": 142
+    "numero": 142,
+    "descripcion": "Recordá que no hace falta esperar ningún plazo para realizar la denuncia."
   }
 ]
