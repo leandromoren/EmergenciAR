@@ -92,11 +92,11 @@ class _ContactosPageState extends State<ContactosPage> {
       slivers: [
         const SliverAppBar(
           title: Text(
-              TTexts.tituloPrincipalContactos,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            pinned: true,
-            floating: false,
+            TTexts.tituloPrincipalContactos,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          pinned: true,
+          floating: false,
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
