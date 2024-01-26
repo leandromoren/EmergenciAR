@@ -14,6 +14,9 @@ class TTexts {
   // -- Texto Emergencias page
   static const String tituloPrincipalEmergencias = 'EMERGENCIAS';
 
+  // -- Texto Contactos page
+  static const String tituloPrincipalContactos = 'Mis contactos';
+
   // -- Texto Boton Rojo
   static const String subTextSoltarParaCancelar = "Suelta para cancelar";
 
@@ -23,9 +26,7 @@ class TTexts {
   static const String ubicacionDispositivoDesactivada = 'No es posible acceder a tu ubicacion actual.';
   static const String msjDenegarPermisosDeUbicacion = 'Si deniegas el permiso no podras compartir tu ubicacion.';
   static const String msjErrorAlLlamarEmergencias = 'Lo sentimos, ha ocurrido un earror al ejecutar el llamado, Intentalo nuevamente';
-
-  // -- Sugerencias
-  List<String> sugerencias = ['Busca un lugar seguro', 'Ve a lugares concurridos', 'Busca ayuda inmediatamente', 'Comunicate con tus familiares o amigos'];
+  static const String msjErrorAlLlamarContacto = 'Ocurrio un error al llamar al contacto.';
 
   // -- Mensaje de ubicacion
   static const String mensajeDeUbicacionCompartida = '🚨¡Esta es mi ubicación actual!📍:';

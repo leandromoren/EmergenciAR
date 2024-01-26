@@ -66,7 +66,6 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
       return Item(
           expandedValue: numero,
           headerValue: nombre,
-          isExpanded: true,
           description: descripcion);
     }).toList();
     setState(() {
@@ -83,7 +82,6 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
     );
   }
 
-  @override
   Widget _buildPanel() {
     return SingleChildScrollView(
       child: Column(
@@ -92,15 +90,13 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
           context: context,
           tiles: numerosEmergencias.map((Item item) {
             return ListTile(
-              title: Text('🔴 ${item.headerValue}', style: titulosListaEmergencias),
+              title: Text('🔴 ${item.headerValue} 🔹 ${item.expandedValue}', style: titulosListaEmergencias),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '🔹 ${item.expandedValue}',
-                    style: textoNumeroEmergencias,
-                  ),
+                  const SizedBox(height: 10),
                   Text(item.description),
+                  const SizedBox(height: 10),
                 ],
               ),
               trailing: IconButton(
@@ -121,11 +117,9 @@ class Item {
     required this.expandedValue,
     required this.headerValue,
     required this.description,
-    this.isExpanded = false,
   });
 
   String expandedValue;
   String description;
   String headerValue;
-  bool isExpanded;
 }

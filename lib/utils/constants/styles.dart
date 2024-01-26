@@ -38,6 +38,7 @@ const textoPrincipalEmergenciasPage = TextStyle(
 const titulosListaEmergencias = TextStyle(
   fontFamily: 'Comic sans',
   fontWeight: FontWeight.bold,
+  height: 3.0
 );
 
 const textoNumeroEmergencias = TextStyle(
