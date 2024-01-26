@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vidar_app/features/pages/widgets/numeros_robo_auxilio.dart';
+import 'package:vidar_app/utils/constants/styles.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 
 class EmergenciasPage extends StatelessWidget {
@@ -9,12 +10,13 @@ class EmergenciasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 50),
-          Text(TTexts.tituloPrincipalEmergencias),
-          SizedBox(height: 50),
+          SizedBox(height: 70),
+          Text(TTexts.tituloPrincipalEmergencias, style: textoPrincipalEmergenciasPage,),
+          SizedBox(height: 20),
           Expanded(child: NumerosRoboAuxilio()),
         ],
       ),

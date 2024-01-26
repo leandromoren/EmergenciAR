@@ -23,10 +23,25 @@ const kText = TextStyle(
 );
 
 TextStyle textoSecundarioHomePage = TextStyle(
-  fontFamily: 'arial',
-  fontSize: 13.0,
-  fontWeight: FontWeight.w400,
-  color: Colors.grey[400]
+    fontFamily: 'arial',
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+    color: Colors.grey[400]);
+
+const textoPrincipalEmergenciasPage = TextStyle(
+  fontFamily: 'Comic sans',
+  fontSize: 40.0,
+  color: Colors.red,
+  fontWeight: FontWeight.bold,
+);
+
+const titulosListaEmergencias = TextStyle(
+  fontFamily: 'Comic sans',
+  fontWeight: FontWeight.bold,
+);
+
+const textoNumeroEmergencias = TextStyle(
+  fontSize: 25.0,
 );
 
 const kSubHeadingText = TextStyle(
