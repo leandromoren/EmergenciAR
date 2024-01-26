@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:vidar_app/features/pages/contactos_page.dart';
 import 'package:vidar_app/features/pages/emergencias_page.dart';
 import 'package:vidar_app/features/pages/home_page.dart';
 import 'package:vidar_app/utils/functions/colors.dart';
@@ -23,12 +24,16 @@ class NavigationMenuBar extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           backgroundColor: darkMode ? TColors.dark : Colors.white,
-          indicatorColor: darkMode ? TColors.light.withOpacity(0.1) : TColors.dark.withOpacity(0.1),
+          indicatorColor: darkMode
+              ? TColors.light.withOpacity(0.1)
+              : TColors.dark.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Inicio'),
             NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
-            NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
-            NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
+            NavigationDestination(
+                icon: Icon(Iconsax.health), label: 'Emergencias'),
+            NavigationDestination(
+                icon: Icon(Iconsax.user_search), label: 'Contactos'),
           ],
         ),
       ),
@@ -40,18 +45,12 @@ class NavigationMenuBar extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-/* 
-  Cambiar el contenido de las screens por los widgets que sean necesarios por ejemplo
-  final screens = [const HomeScreen(), ...]
-*/
   final screens = [
     const HomePage(),
     Container(
       color: Colors.green,
     ),
     const EmergenciasPage(),
-    Container(
-      color: Colors.blue,
-    ),
+    const ContactosPage()
   ];
 }

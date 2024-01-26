@@ -51,8 +51,8 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
   }
 
   Future<void> cargarNumerosEmergencias() async {
-    const String PATH = 'assets/jsons/numeros_robo_auxilio.json';
-    final jsonString = await rootBundle.loadString(PATH);
+    const String path = 'assets/jsons/numeros_robo_auxilio.json';
+    final jsonString = await rootBundle.loadString(path);
     final parsedJson = jsonDecode(jsonString);
     final emergencias =
         (parsedJson as List<dynamic>).cast<Map<String, dynamic>>().map((item) {
@@ -83,36 +83,35 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
     );
   }
 
+  @override
   Widget _buildPanel() {
-    return ExpansionPanelList(
-      expansionCallback: (int index, bool isExpanded) {
-        setState(() {
-          numerosEmergencias[index].isExpanded = isExpanded;
-        });
-      },
-      children: numerosEmergencias.map<ExpansionPanel>((Item item) {
-        return ExpansionPanel(
-          headerBuilder: (BuildContext context, bool isExpanded) {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: ListTile.divideTiles(
+          context: context,
+          tiles: numerosEmergencias.map((Item item) {
             return ListTile(
-              title: Text('🔴 ${item.headerValue}',
-                  style: titulosListaEmergencias),
-            );
-          },
-          body: ListTile(
-            title: Text(
-              '🔹 ${item.expandedValue}',
-              style: textoNumeroEmergencias,
-            ),
-            subtitle: Text(item.description),
-            trailing: IconButton(
+              title: Text('🔴 ${item.headerValue}', style: titulosListaEmergencias),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '🔹 ${item.expandedValue}',
+                    style: textoNumeroEmergencias,
+                  ),
+                  Text(item.description),
+                ],
+              ),
+              trailing: IconButton(
                 iconSize: 40.0,
                 icon: Icon(Icons.phone, color: Colors.red[700]),
-                onPressed: () =>
-                    _llamarEmergencia(context, item.expandedValue)),
-          ),
-          isExpanded: item.isExpanded,
-        );
-      }).toList(),
+                onPressed: () => _llamarEmergencia(context, item.expandedValue),
+              ),
+            );
+          }),
+        ).toList(),
+      ),
     );
   }
 }
