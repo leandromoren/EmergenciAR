@@ -25,16 +25,14 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    final darkMode = THelperFunctions.isDarkMode(context);
+    //final darkMode = THelperFunctions.isDarkMode(context);
 
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: darkMode ? TColors.dark : Colors.white,
-          foregroundColor: darkMode ? TColors.light : Colors.black,
+          backgroundColor: TColors.primaryAppColor,
           title: Text(
             'Inicio',
-            style: kAppBarText,
           ),
         ),
         body: Padding(
@@ -43,7 +41,7 @@ class _HomePageState extends State<HomePage>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               CompartirUbicacion(),
-              //Agregar otro widget
+              //Agregar otro widget con alguna funcionalidad
               
               //---------------------
               Container(

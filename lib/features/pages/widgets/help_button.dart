@@ -7,6 +7,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/styles.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
+import 'package:vidar_app/utils/functions/colors.dart';
 
 class HelpButton extends StatefulWidget {
   const HelpButton({
@@ -31,7 +32,7 @@ class _HelpButtonState extends State<HelpButton> {
   }
 
   void _startTimer() {
-    const oneSecond = Duration(seconds: 1);
+    const oneSecond = Duration(milliseconds: 690);
     _timer = Timer.periodic(oneSecond, (timer) {
       setState(() {
         contador--;
@@ -55,8 +56,7 @@ class _HelpButtonState extends State<HelpButton> {
     super.dispose();
   }
 
-  Future<void> _llamarPolicia(
-      BuildContext context, String numeroEmergencia) async {
+  Future<void> _llamarPolicia(BuildContext context, String numeroEmergencia) async {
     try {
       final Uri launchUri = Uri(scheme: 'tel', path: numeroEmergencia);
       await launchUrl(launchUri);
@@ -102,7 +102,7 @@ class _HelpButtonState extends State<HelpButton> {
             width: 210.0,
             height: 210.0,
             decoration: BoxDecoration(
-                color: Colors.purple,
+                color: TColors.primaryAppColor,
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -127,7 +127,7 @@ class _HelpButtonState extends State<HelpButton> {
                 width: 20.0,
                 height: 220.0,
                 decoration: const BoxDecoration(
-                  color: Colors.purple,
+                  color: TColors.primaryAppColor,
                   shape: BoxShape.circle,
                 ),
                 alignment: Alignment.topCenter,

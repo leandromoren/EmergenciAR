@@ -4,6 +4,7 @@ import 'package:legacy_buttons/LegacyFlatButton.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
+import 'package:vidar_app/utils/functions/colors.dart';
 
 class ContactosPage extends StatefulWidget {
   const ContactosPage({super.key});
@@ -21,6 +22,9 @@ class _ContactosPageState extends State<ContactosPage> {
     obtenerContactos();
   }
 
+  /*
+    Esta funcion llama al contacto seleccionado 
+   */
   Future<void> _llamarContacto(BuildContext context, Contact contacto) async {
     try {
       if (contacto.phones != null && contacto.phones!.isNotEmpty) {
@@ -49,7 +53,11 @@ class _ContactosPageState extends State<ContactosPage> {
       );
     }
   }
+  //Agrupar contactos
 
+  /* 
+    Esta funcion obtiene los contactos y pide permiso para acceder a ellos
+  */
   Future<void> obtenerContactos() async {
     PermissionStatus permissionStatus = await Permission.contacts.request();
     if (permissionStatus.isGranted) {
@@ -63,8 +71,7 @@ class _ContactosPageState extends State<ContactosPage> {
           context: context,
           builder: (context) => AlertDialog(
                 title: const Text('Permiso necesario'),
-                content: const Text(
-                    'Se requiere el permiso para obtener los contactos'),
+                content: const Text(TTexts.msjPermisosContactosNecesario),
                 actions: [
                   LegacyFlatButton(
                       onPressed: () => Navigator.of(context).pop(),
@@ -88,42 +95,53 @@ class _ContactosPageState extends State<ContactosPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        const SliverAppBar(
-          title: Text(
-            TTexts.tituloPrincipalContactos,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          pinned: true,
-          floating: false,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: TColors.primaryAppColor,
+        title: const Text(
+          TTexts.tituloPrincipalContactos,
         ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              Contact contact = _contactos[index];
-              return ListTile(
-                leading: (contact.avatar != null && contact.avatar!.isNotEmpty)
-                    ? CircleAvatar(
-                        backgroundImage:
-                            MemoryImage(contact.avatar!.buffer.asUint8List()),
-                      )
-                    : CircleAvatar(
-                        child: Text(contact.initials()),
-                      ),
-                title: Text(contact.displayName ?? ''),
-                subtitle: Text(contact.phones!.isNotEmpty
-                    ? contact.phones!.first.value ?? ''
-                    : '-'),
-                onTap: () {
-                  _llamarContacto(context, contact);
-                },
-              );
-            },
-            childCount: _contactos.length,
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                Contact contact = _contactos[index];
+                return Column(
+                  children: [
+                    ListTile(
+                      leading:
+                          (contact.avatar != null && contact.avatar!.isNotEmpty)
+                              ? CircleAvatar(
+                                  backgroundImage: MemoryImage(
+                                      contact.avatar!.buffer.asUint8List()),
+                                )
+                              : CircleAvatar(
+                                  foregroundColor: Colors.white,
+                                  backgroundColor: TColors.primaryAppColor,
+                                  child: Text(contact.initials()),
+                                ),
+                      title: Text(contact.displayName ?? ''),
+                      subtitle: Text(contact.phones!.isNotEmpty
+                          ? contact.phones!.first.value ?? ''
+                          : '-'),
+                      onTap: () {
+                        _llamarContacto(context, contact);
+                      },
+                    ),
+                    const Divider(
+                      height: 1,
+                      color: TColors.primaryAppColor,
+                    )
+                  ],
+                );
+              },
+              childCount: _contactos.length,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

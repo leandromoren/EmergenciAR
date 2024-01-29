@@ -12,10 +12,11 @@ class TTexts {
   static const String tituloSecundarioHome = 'Manten presionado el boton para llamar a emergencias';
 
   // -- Texto Emergencias page
-  static const String tituloPrincipalEmergencias = 'EMERGENCIAS';
+  static const String tituloPrincipalEmergencias = 'Emergencias';
 
   // -- Texto Contactos page
   static const String tituloPrincipalContactos = 'Mis contactos';
+  static const String msjPermisosContactosNecesario = 'Para usar esta funcionalidad, debe aceptar los permisos de contactos.';
 
   // -- Texto Boton Rojo
   static const String subTextSoltarParaCancelar = "Suelta para cancelar";

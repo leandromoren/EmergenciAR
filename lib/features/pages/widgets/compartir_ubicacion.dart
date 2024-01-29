@@ -3,6 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
+import 'package:vidar_app/utils/functions/colors.dart';
 
 class CompartirUbicacion extends StatefulWidget {
   const CompartirUbicacion({super.key});
@@ -32,7 +33,6 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
         desiredAccuracy: LocationAccuracy.high,
       );
     } else {
-      // Manejo del caso en que el usuario deniega los permisos
       // ignore: use_build_context_synchronously
       await showDialog(
         context: context,
@@ -92,7 +92,7 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
             IconButton(
               onPressed: compartirUbicacion,
               icon: const Icon(Icons.share_location_outlined),
-              color: Colors.purple,
+              color: TColors.primaryAppColor,
               iconSize: 40.0,
             ),
             Text(
