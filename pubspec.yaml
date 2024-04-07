@@ -21,6 +21,13 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.1.5 <4.0.0'
 
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/icon/icon-app.png
+  fullscreen: true
+  android: true
+  ios: true
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -54,6 +61,7 @@ dependencies:
   alphabet_scroll_view: ^0.3.2
   azlistview: ^2.0.0
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
 
 dev_dependencies:
   flutter_test:
