@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:vidar_app/features/pages/contactos_page.dart';
 import 'package:vidar_app/features/pages/emergencias_page.dart';
 import 'package:vidar_app/features/pages/home_page.dart';
+import 'package:vidar_app/features/pages/mapa_page.dart';
 import 'package:vidar_app/utils/functions/colors.dart';
 import 'package:vidar_app/utils/functions/helper_functions.dart';
 
@@ -23,17 +24,15 @@ class NavigationMenuBar extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
-          backgroundColor: darkMode ? TColors.dark : Colors.white,
+          backgroundColor: TColors.navbarBackgroundColor,
           indicatorColor: darkMode
               ? TColors.light.withOpacity(0.1)
               : TColors.dark.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Inicio'),
             NavigationDestination(icon: Icon(Iconsax.map), label: 'Mapa'),
-            NavigationDestination(
-                icon: Icon(Iconsax.health), label: 'Emergencias'),
-            NavigationDestination(
-                icon: Icon(Iconsax.user_search), label: 'Contactos'),
+            NavigationDestination(icon: Icon(Iconsax.health), label: 'Emergencias'),
+            NavigationDestination(icon: Icon(Iconsax.user_search), label: 'Contactos'),
           ],
         ),
       ),
@@ -47,9 +46,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomePage(),
-    Container(
-      color: Colors.green,
-    ),
+    const MapaPage(),
     const EmergenciasPage(),
     const ContactosPage()
   ];

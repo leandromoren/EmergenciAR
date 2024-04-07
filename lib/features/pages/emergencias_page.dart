@@ -13,7 +13,7 @@ class EmergenciasPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(TTexts.tituloPrincipalEmergencias),
-        backgroundColor: TColors.primaryAppColor,
+        backgroundColor: TColors.navbarBackgroundColor,
       ),
       body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,

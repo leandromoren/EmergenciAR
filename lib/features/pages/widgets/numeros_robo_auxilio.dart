@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -29,8 +28,8 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
       final Uri launchUri = Uri(scheme: 'tel', path: numeroEmergencia);
       await launchUrl(launchUri);
     } catch (error) {
-      // ignore: use_build_context_synchronously
       await showDialog(
+        // ignore: use_build_context_synchronously
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -57,13 +56,12 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
     final emergencias = (parsedJson as List<dynamic>).cast<Map<String, dynamic>>().map((item) {
       final nombre = item['nombre'] != null ? item['nombre'].toString() : 'Sin nombre';
       final numero = item['numero'] != null ? item['numero'].toString() : 'Sin numero';
-      final descripcion = item['descripcion'] != null
-          ? item['descripcion'].toString()
-          : 'Sin descripción';
+      final descripcion = item['descripcion'] != null ? item['descripcion'].toString() : 'Sin descripción';
       return Item(
           expandedValue: numero,
           headerValue: nombre,
-          description: descripcion);
+          description: descripcion
+        );
     }).toList();
     setState(() {
       numerosEmergencias = emergencias;
@@ -84,11 +82,12 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: ListTile.divideTiles(
+            color: TColors.dark,
             context: context,
             tiles: numerosEmergencias.map((Item item) {
               return ListTile(
                 minVerticalPadding: 20.0,
-                title: Text('🔴 ${item.headerValue} 🔹 ${item.expandedValue}', style: titulosListaEmergencias),
+                title: Text('📞 · ${item.headerValue} · ${item.expandedValue}', style: titulosListaEmergencias),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -99,7 +98,7 @@ class _NumerosRoboAuxilioState extends State<NumerosRoboAuxilio> {
                 ),
                 trailing: IconButton(
                   iconSize: 40.0,
-                  icon: const Icon(Icons.phone_android, color: TColors.primaryAppColor),
+                  icon: const Icon(Icons.phone_android, color: TColors.extraColor),
                   onPressed: () => _llamarEmergencia(context, item.expandedValue),
                 ),
               );

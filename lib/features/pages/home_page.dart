@@ -6,7 +6,6 @@ import 'package:vidar_app/features/pages/widgets/sugerencias_home.dart';
 import 'package:vidar_app/utils/constants/styles.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
 import 'package:vidar_app/utils/functions/colors.dart';
-import 'package:vidar_app/utils/functions/helper_functions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,7 +29,7 @@ class _HomePageState extends State<HomePage>
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: TColors.primaryAppColor,
+          backgroundColor: TColors.navbarBackgroundColor,
           title: Text(
             'Inicio',
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vidar_app/features/pages/onboarding.dart';
+import 'package:vidar_app/features/pages/widgets/navigation_menubar.dart';
+import 'package:vidar_app/utils/functions/colors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +20,8 @@ class _VivarAppState extends State<VivarApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
-      home: const OnBoardingPage(),
+      theme: ThemeData(scaffoldBackgroundColor: TColors.navbarBackgroundColor),
+      home: const NavigationMenuBar(),
     );
   }
 }

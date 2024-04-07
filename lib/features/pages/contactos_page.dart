@@ -1,6 +1,5 @@
 import 'package:contacts_service/contacts_service.dart';
 import 'package:flutter/material.dart';
-import 'package:legacy_buttons/LegacyFlatButton.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/utils/constants/text_strings.dart';
@@ -22,9 +21,6 @@ class _ContactosPageState extends State<ContactosPage> {
     obtenerContactos();
   }
 
-  /*
-    Esta funcion llama al contacto seleccionado 
-   */
   Future<void> _llamarContacto(BuildContext context, Contact contacto) async {
     try {
       if (contacto.phones != null && contacto.phones!.isNotEmpty) {
@@ -53,11 +49,7 @@ class _ContactosPageState extends State<ContactosPage> {
       );
     }
   }
-  //Agrupar contactos
 
-  /* 
-    Esta funcion obtiene los contactos y pide permiso para acceder a ellos
-  */
   Future<void> obtenerContactos() async {
     PermissionStatus permissionStatus = await Permission.contacts.request();
     if (permissionStatus.isGranted) {
@@ -73,10 +65,10 @@ class _ContactosPageState extends State<ContactosPage> {
                 title: const Text('Permiso necesario'),
                 content: const Text(TTexts.msjPermisosContactosNecesario),
                 actions: [
-                  LegacyFlatButton(
+                  TextButton(
                       onPressed: () => Navigator.of(context).pop(),
                       child: const Text('Cancelar')),
-                  LegacyFlatButton(
+                  TextButton(
                       child: const Text('Aceptar'),
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -97,7 +89,7 @@ class _ContactosPageState extends State<ContactosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: TColors.primaryAppColor,
+        backgroundColor: TColors.navbarBackgroundColor,
         title: const Text(
           TTexts.tituloPrincipalContactos,
         ),
@@ -119,20 +111,18 @@ class _ContactosPageState extends State<ContactosPage> {
                                 )
                               : CircleAvatar(
                                   foregroundColor: Colors.white,
-                                  backgroundColor: TColors.primaryAppColor,
+                                  backgroundColor: TColors.secondaryAppColor,
                                   child: Text(contact.initials()),
                                 ),
                       title: Text(contact.displayName ?? ''),
-                      subtitle: Text(contact.phones!.isNotEmpty
-                          ? contact.phones!.first.value ?? ''
-                          : '-'),
+                      subtitle: Text(contact.phones!.isNotEmpty ? contact.phones!.first.value ?? '' : '-'),
                       onTap: () {
                         _llamarContacto(context, contact);
                       },
                     ),
                     const Divider(
-                      height: 1,
-                      color: TColors.primaryAppColor,
+                      height: 0.5,
+                      color: TColors.dark,
                     )
                   ],
                 );
