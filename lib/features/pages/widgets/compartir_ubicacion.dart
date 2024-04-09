@@ -87,21 +87,18 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
       child: GestureDetector(
         onTap: compartirUbicacion,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               onPressed: compartirUbicacion,
               icon: const Icon(Icons.share_location_outlined),
               color: TColors.primaryAppColor,
-              iconSize: 40.0,
-            ),
-            Text(
-              'Compartir\nubicación',
-              style: TextStyle(fontSize: 11.0, color: Colors.grey[400]),
+              iconSize: 80.0,
             ),
           ],
         ),
       ),
+    
     );
   }
 }

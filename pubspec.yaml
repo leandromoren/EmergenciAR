@@ -93,6 +93,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/icon/mcdonalds.png
+    - assets/icon/pharmacy.png
+    - assets/icon/hospital.png
+    - assets/icon/policeman-icon.png
     - assets/jsons/numeros_robo_auxilio.json
     - assets/jsons/numeros_violencia_y_abuso.json
 

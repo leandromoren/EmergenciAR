@@ -11,4 +11,5 @@ class TColors {
   static const Color secondaryAppColor = Color.fromARGB(255, 35, 71, 230);
   static const Color navbarBackgroundColor = Color.fromARGB(255, 255, 255, 255);
   static const Color extraColor = Color.fromARGB(255, 2, 156, 48);
+  static const Color mapLogosColor = Color.fromARGB(255, 171, 247, 217);
 }
