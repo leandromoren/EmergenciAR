@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vidar_app/utils/functions/colors.dart';
 
 class FarmaciaUbicacion extends StatelessWidget {
   final Function? onMapFunction;
