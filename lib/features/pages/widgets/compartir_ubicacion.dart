@@ -33,8 +33,8 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
         desiredAccuracy: LocationAccuracy.high,
       );
     } else {
-      // ignore: use_build_context_synchronously
       await showDialog(
+        // ignore: use_build_context_synchronously
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -59,8 +59,8 @@ class _CompartirUbicacionState extends State<CompartirUbicacion> {
       Share.share(
           '${TTexts.mensajeDeUbicacionCompartida} $url${posicion.latitude},${posicion.longitude}');
     } else {
-      // ignore: use_build_context_synchronously
       showDialog(
+         // ignore: use_build_context_synchronously
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(

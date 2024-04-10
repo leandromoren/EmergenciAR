@@ -1,5 +1,5 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:vidar_app/utils/functions/colors.dart';
 
 class PoliciaUbicacion extends StatelessWidget {
   final Function? onMapFunction;
