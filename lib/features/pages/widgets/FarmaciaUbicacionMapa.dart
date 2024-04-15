@@ -14,7 +14,7 @@ class FarmaciaUbicacion extends StatelessWidget {
               onMapFunction!('Farmacia cerca de mi');
             },
             child: Card(
-                color: Color.fromARGB(255, 82, 126, 247),
+                color: const Color.fromARGB(255, 82, 126, 247),
                 elevation: 5,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
