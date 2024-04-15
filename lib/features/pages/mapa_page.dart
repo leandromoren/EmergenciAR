@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vidar_app/features/pages/widgets/FarmaciaUbicacionMapa.dart';
 import 'package:vidar_app/features/pages/widgets/PoliciaUbicacionMapa.dart';
-import 'package:vidar_app/features/pages/widgets/compartir_ubicacion.dart';
 import 'package:vidar_app/features/pages/widgets/hospital_ubicacion_mapa.dart';
 import 'package:vidar_app/features/pages/widgets/mapa.dart';
 import 'package:vidar_app/features/pages/widgets/mcdonalds_ubicacion_mapa.dart';
