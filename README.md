@@ -1,4 +1,4 @@
-# vidar_app
+# EmergenciAR
 
 ## Proyecto con sistema de emergencias para ciudadanos argentinos
 
